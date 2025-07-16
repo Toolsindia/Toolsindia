@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToolKit - Image & PDF Tools</title>
+    <title>ToolMaster - Image & PDF Tools</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #4361ee;
+            --primary-light: #4895ef;
             --secondary: #3a0ca3;
             --accent: #4cc9f0;
             --light: #f8f9fa;
@@ -20,6 +21,7 @@
             --light-gray: #e9ecef;
             --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
             --transition: all 0.3s ease;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
         }
 
         .dark-mode {
@@ -79,6 +81,8 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logo i {
@@ -146,7 +150,7 @@
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 30px;
             font-weight: 500;
             cursor: pointer;
@@ -156,17 +160,18 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background: var(--gradient);
             color: white;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--secondary);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
         }
 
         .btn-outline {
@@ -196,7 +201,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 80px 0;
+            padding: 100px 0;
             background: linear-gradient(135deg, rgba(67,97,238,0.1) 0%, rgba(76,201,240,0.1) 100%);
             position: relative;
             overflow: hidden;
@@ -214,9 +219,10 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .hero p {
@@ -275,7 +281,7 @@
         }
 
         .tool-search button {
-            background: var(--primary);
+            background: var(--gradient);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -286,7 +292,8 @@
         }
 
         .tool-search button:hover {
-            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
         }
 
         /* Categories Section */
@@ -305,6 +312,7 @@
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .section-title::after {
@@ -399,6 +407,7 @@
             overflow: hidden;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
+            position: relative;
         }
 
         .dark-mode .tool-card {
@@ -414,12 +423,23 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.25);
         }
 
+        .tool-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .tool-card:hover .tool-content h3 {
+            color: var(--primary);
+        }
+
         .tool-icon {
             height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background: var(--gradient);
             color: white;
             font-size: 2.5rem;
         }
@@ -431,6 +451,7 @@
         .tool-content h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
+            transition: var(--transition);
         }
 
         .tool-content p {
@@ -605,6 +626,36 @@
             transform: translateY(-5px);
         }
 
+        /* Stats Section */
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -659,10 +710,10 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">
+                <a href="#" class="logo">
                     <i class="fas fa-tools"></i>
-                    <span>ToolKit</span>
-                </div>
+                    <span>ToolMaster</span>
+                </a>
                 <div class="nav-links">
                     <a href="#" class="active">Home</a>
                     <a href="#">Image Tools</a>
@@ -675,8 +726,8 @@
                     <button class="theme-toggle" id="themeToggle">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button class="btn btn-outline">Login</button>
-                    <button class="btn btn-primary">Sign Up</button>
+                    <a href="#" class="btn btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
                     <button class="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
                     </button>
@@ -692,12 +743,12 @@
                 <h1>All-in-One Toolkit for Images and PDFs</h1>
                 <p>Transform, convert, and enhance your files with our powerful collection of free online tools. No installation required.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">
+                    <a href="#" class="btn btn-primary">
                         <i class="fas fa-image"></i> Explore Image Tools
-                    </button>
-                    <button class="btn btn-outline">
+                    </a>
+                    <a href="#" class="btn btn-outline">
                         <i class="fas fa-file-pdf"></i> Explore PDF Tools
-                    </button>
+                    </a>
                 </div>
                 <div class="tool-search">
                     <input type="text" placeholder="Search for tools...">
@@ -717,6 +768,30 @@
         </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Online Tools</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Daily Users</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Files Processed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Categories Section -->
     <section class="section">
         <div class="container">
@@ -731,7 +806,7 @@
                     </div>
                     <h3>Image Tools</h3>
                     <p>Resize, compress, convert, and enhance your images with our powerful tools</p>
-                    <button class="btn btn-outline">Explore</button>
+                    <a href="#" class="btn btn-outline">Explore</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -739,7 +814,7 @@
                     </div>
                     <h3>PDF Tools</h3>
                     <p>Merge, split, compress, convert and edit your PDF files with ease</p>
-                    <button class="btn btn-outline">Explore</button>
+                    <a href="#" class="btn btn-outline">Explore</a>
                 </div>
                 <div class="category-card">
                     <div class="category-icon">
@@ -747,7 +822,7 @@
                     </div>
                     <h3>Conversion Tools</h3>
                     <p>Convert between different file formats quickly and efficiently</p>
-                    <button class="btn btn-outline">Explore</button>
+                    <a href="#" class="btn btn-outline">Explore</a>
                 </div>
             </div>
         </div>
@@ -761,100 +836,148 @@
                 <p class="section-subtitle">Discover our most frequently used tools by thousands of users daily</p>
             </div>
             <div class="tools-grid">
-                <!-- Tool Card 1 -->
+                <!-- Tool Card 1 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-compress-arrows-alt"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>Image Compressor</h3>
-                        <p>Reduce image file size without losing quality</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Fast</span>
-                            <span><i class="fas fa-user"></i> 10K+ daily</span>
+                    <a href="image-compressor.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-compress-arrows-alt"></i>
                         </div>
-                        <span class="tool-tag tag-image">Image</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>Image Compressor</h3>
+                            <p>Reduce image file size without losing quality</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Fast</span>
+                                <span><i class="fas fa-user"></i> 10K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-image">Image</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Tool Card 2 -->
+                <!-- Tool Card 2 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>PDF Merger</h3>
-                        <p>Combine multiple PDF files into one document</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Instant</span>
-                            <span><i class="fas fa-user"></i> 8K+ daily</span>
+                    <a href="pdf-merger.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-pdf"></i>
                         </div>
-                        <span class="tool-tag tag-pdf">PDF</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>PDF Merger</h3>
+                            <p>Combine multiple PDF files into one document</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Instant</span>
+                                <span><i class="fas fa-user"></i> 8K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-pdf">PDF</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Tool Card 3 -->
+                <!-- Tool Card 3 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>Image Converter</h3>
-                        <p>Convert between JPG, PNG, WEBP, and more</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Fast</span>
-                            <span><i class="fas fa-user"></i> 7.5K+ daily</span>
+                    <a href="image-converter.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-exchange-alt"></i>
                         </div>
-                        <span class="tool-tag tag-image">Image</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>Image Converter</h3>
+                            <p>Convert between JPG, PNG, WEBP, and more</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Fast</span>
+                                <span><i class="fas fa-user"></i> 7.5K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-image">Image</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Tool Card 4 -->
+                <!-- Tool Card 4 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>PDF Protector</h3>
-                        <p>Add password protection to your PDF files</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Secure</span>
-                            <span><i class="fas fa-user"></i> 6K+ daily</span>
+                    <a href="pdf-protector.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-lock"></i>
                         </div>
-                        <span class="tool-tag tag-pdf">PDF</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>PDF Protector</h3>
+                            <p>Add password protection to your PDF files</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Secure</span>
+                                <span><i class="fas fa-user"></i> 6K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-pdf">PDF</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Tool Card 5 -->
+                <!-- Tool Card 5 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-crop-alt"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>Image Resizer</h3>
-                        <p>Resize images to any dimension while maintaining quality</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Instant</span>
-                            <span><i class="fas fa-user"></i> 5.5K+ daily</span>
+                    <a href="image-resizer.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-crop-alt"></i>
                         </div>
-                        <span class="tool-tag tag-image">Image</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>Image Resizer</h3>
+                            <p>Resize images to any dimension while maintaining quality</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Instant</span>
+                                <span><i class="fas fa-user"></i> 5.5K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-image">Image</span>
+                        </div>
+                    </a>
                 </div>
                 
-                <!-- Tool Card 6 -->
+                <!-- Tool Card 6 with hyperlink -->
                 <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <div class="tool-content">
-                        <h3>PDF Compressor</h3>
-                        <p>Reduce PDF file size without losing quality</p>
-                        <div class="tool-meta">
-                            <span><i class="far fa-clock"></i> Fast</span>
-                            <span><i class="fas fa-user"></i> 5K+ daily</span>
+                    <a href="pdf-compressor.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-contract"></i>
                         </div>
-                        <span class="tool-tag tag-pdf">PDF</span>
-                    </div>
+                        <div class="tool-content">
+                            <h3>PDF Compressor</h3>
+                            <p>Reduce PDF file size without losing quality</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Fast</span>
+                                <span><i class="fas fa-user"></i> 5K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-pdf">PDF</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Tool Card 7 with hyperlink -->
+                <div class="tool-card">
+                    <a href="watermark-tool.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3>Watermark Tool</h3>
+                            <p>Add text or image watermarks to your photos</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Easy</span>
+                                <span><i class="fas fa-user"></i> 4.8K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-image">Image</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Tool Card 8 with hyperlink -->
+                <div class="tool-card">
+                    <a href="pdf-to-word.html" class="tool-link">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-word"></i>
+                        </div>
+                        <div class="tool-content">
+                            <h3>PDF to Word</h3>
+                            <p>Convert PDF documents to editable Word files</p>
+                            <div class="tool-meta">
+                                <span><i class="far fa-clock"></i> Accurate</span>
+                                <span><i class="fas fa-user"></i> 4.5K+ daily</span>
+                            </div>
+                            <span class="tool-tag tag-pdf">PDF</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -933,7 +1056,7 @@
                 <div class="footer-col">
                     <div class="logo">
                         <i class="fas fa-tools"></i>
-                        <span>ToolKit</span>
+                        <span>ToolMaster</span>
                     </div>
                     <p>Your all-in-one solution for image and PDF editing. Free, fast, and secure online tools for everyone.</p>
                     <div class="social-links">
@@ -946,22 +1069,22 @@
                 </div>
                 <div class="footer-col">
                     <h3>Image Tools</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Compress Image</a></li>
-                        <li><a href="#">Resize Image</a></li>
+                    <ul class="/IMG-COMPRESS.HTML">
+                        <li><a href="image-compressor.html">Compress Image</a></li>
+                        <li><a href="image-resizer.html">Resize Image</a></li>
                         <li><a href="#">Crop Image</a></li>
-                        <li><a href="#">Convert Image</a></li>
-                        <li><a href="#">Watermark</a></li>
+                        <li><a href="image-converter.html">Convert Image</a></li>
+                        <li><a href="watermark-tool.html">Watermark</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>PDF Tools</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Merge PDF</a></li>
+                        <li><a href="pdf-merger.html">Merge PDF</a></li>
                         <li><a href="#">Split PDF</a></li>
-                        <li><a href="#">Compress PDF</a></li>
-                        <li><a href="#">PDF to Word</a></li>
-                        <li><a href="#">Protect PDF</a></li>
+                        <li><a href="pdf-compressor.html">Compress PDF</a></li>
+                        <li><a href="pdf-to-word.html">PDF to Word</a></li>
+                        <li><a href="pdf-protector.html">Protect PDF</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -976,7 +1099,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 ToolKit. All rights reserved. Designed with ❤️ for creators worldwide.</p>
+                <p>&copy; 2023 ToolMaster. All rights reserved. Designed with ❤️ for creators worldwide.</p>
             </div>
         </div>
     </footer>
@@ -1024,6 +1147,22 @@
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         mobileMenuBtn.addEventListener('click', () => {
             alert('Mobile menu would open here. This is a demo.');
+        });
+        
+        // Tool Search Functionality
+        const searchInput = document.querySelector('.tool-search input');
+        const searchButton = document.querySelector('.tool-search button');
+        
+        searchButton.addEventListener('click', () => {
+            if (searchInput.value.trim() !== '') {
+                alert(`Searching for: ${searchInput.value}`);
+            }
+        });
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+                alert(`Searching for: ${searchInput.value}`);
+            }
         });
     </script>
 </body>
